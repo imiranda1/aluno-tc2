@@ -1,0 +1,13 @@
+.coluna-50 {
+  width: 50%;
+}
+
+.linha{
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.linha-vertical {
+  height: 200px;
+  border-right: 1px solid black;
+}

@@ -1,0 +1,15 @@
+<nav>
+  <ul class="menu">
+    <li (click)="listarAlunos()">Listagem de Alunos</li>
+    <li (click)="cadastrarAluno()">Cadastrar Aluno</li>
+    </ul>
+</nav>
+
+<hr>
+<ng-container *ngIf="listar" >
+  <app-listar-alunos></app-listar-alunos>
+</ng-container>
+
+<ng-container *ngIf="cadastrar">
+  <app-cadastro-aluno></app-cadastro-aluno>
+</ng-container>

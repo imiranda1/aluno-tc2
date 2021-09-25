@@ -1,0 +1,24 @@
+<h1> Lista de Alunos</h1>
+
+<div class="linha">
+  <div class="coluna-50">
+    <table >
+      <tr>
+        <th>Nome</th>
+        <th>Opção</th>
+      </tr>
+      <tr *ngFor="let aluno of listaDeAlunos" >
+          <td>{{aluno.name}}</td>
+          <td (click)="verPerfil(aluno)" >
+            Ver Perfil
+          </td>
+      </tr>
+
+    </table>
+  </div>
+  <div class="coluna-50 linha-veritcal"><ng-container *ngIf="perfilAlunoSelecionado">
+    <app-aluno [alunoVizualizar] = "perfilAlunoSelecionado"></app-aluno>
+  </ng-container>
+  </div>
+</div>
+
