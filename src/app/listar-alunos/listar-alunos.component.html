@@ -1,8 +1,9 @@
-<h1> Lista de Alunos</h1>
+
 
 <div class="linha">
   <div class="coluna-50">
-    <table >
+    <h1>  LISTA DE ALUNOS </h1>
+    <table>
       <tr>
         <th>Nome</th>
         <th>Opção</th>
@@ -16,6 +17,7 @@
 
     </table>
   </div>
+
   <div class="coluna-50 linha-veritcal"><ng-container *ngIf="perfilAlunoSelecionado">
     <app-aluno [alunoVizualizar] = "perfilAlunoSelecionado"></app-aluno>
   </ng-container>

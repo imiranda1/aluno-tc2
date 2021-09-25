@@ -1,16 +1,25 @@
 
 <h1> Cadastro de Alunos</h1>
-<div>
-  <label>Nome:
-    <input  [(ngModel)]="alunoAdicionar.name" placeholder="Nome do Aluno">
-  </label>
-  <label>Idade:
-    <input [(ngModel)]="alunoAdicionar.age" type="number" placeholder="Idade do Aluno">
-  </label>
-  <label>Url Foto:
-    <input [(ngModel)]="alunoAdicionar.urlPicture" placeholder="Url Foto" >
-  </label>
+
+<div class="teste1">
+  <div class="input1">
+    <label>Nome:</label>
+      <input  [(ngModel)]="alunoAdicionar.name" placeholder="Nome do Aluno">
+
+  </div>
+  <div class="input1">
+    <label>Idade:</label>
+      <input [(ngModel)]="alunoAdicionar.age" type="number" placeholder="Idade do Aluno">
+
+  </div>
+
+  <div class="input1">
+    <label>Url Foto:</label>
+      <input [(ngModel)]="alunoAdicionar.urlPicture" placeholder="Url Foto" >
+
+  </div>
     <button (click)="salvarAluno(alunoAdicionar)">Salvar</button>
+
 </div>
 
 <hr>
