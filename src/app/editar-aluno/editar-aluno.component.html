@@ -1,9 +1,9 @@
-<form [formGroup]="formCadastroAluno" (submit)="salvarAluno()">
+<form [formGroup]="formEditarAluno" (submit)="salvarAluno()">
   <div class="columns my-5 is-centered" >
     <div class="column is-6">
       <div class="field">
         <label> Nome:</label>
-          <input formControlName="name" class="input is-info" type="text" placeholder="Nome Aluno">
+          <input formControlName="name"  class="input is-info" type="text" placeholder="Nome Aluno">
       </div>
       <div class="field">
         <label>Idade:</label>
@@ -15,10 +15,21 @@
             <input formControlName="urlPicture" class="input is-info" type="text" placeholder="URL foto">
       </div>
       <div class="control">
-        <button class="button is-info is-rounded">Cadastrar</button>
+        <button class="button is-info is-rounded">Salvar</button>
       </div>
     </div>
   </div>
 
 </form>
+
+<div class="columns my-5 is-centered" >
+
+    <div class="control">
+      <a routerLink="/alunos">
+        <button class="button is-rounded">Voltar</button>
+      </a>
+  </div>
+</div>
+
+
 

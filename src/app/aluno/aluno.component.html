@@ -1,10 +1,15 @@
 
-<div>
 
-  <h1>ALUNO</h1>
-  <h2>Nome: {{alunoVizualizar.name}}</h2>
-  <h3>Idade: {{alunoVizualizar.age}}</h3>
-
-  <img src={{alunoVizualizar.urlPicture}} alt={{alunoVizualizar.name}}>
-</div>
-
+<div class="columns is-centered my-5">
+  <div class="column is-6">
+    <div class="has-text-centered">
+      <a routerLink="/alunos">Voltar</a>
+      </div>
+      <!-- <h2 class="subtitle is-3 has-text-centered">Id: {{alunoVizualizar.id}}</h2> -->
+        <h2 class="subtitle is-3 has-text-centered">Nome: {{alunoVizualizar.name}}</h2>
+        <h3 class="subtitle is-6 has-text-centered">Idade: {{alunoVizualizar.age}}</h3>
+        <figure class="image is-fullwidth">
+          <img src={{alunoVizualizar.urlPicture}}  alt="Foto do perfil">
+        </figure>
+        </div>
+    </div>

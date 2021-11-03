@@ -1,20 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=Varela+Round");
 
-.menu {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 720px;
-  margin: 0 auto;
-  height: 5vh;
-  list-style: none;
-}
-
-.menu li {
-  width:200px;
-  height: 50px;
-  transition: background-position-x 0.9s linear;
-  text-align: center;
-}
 
 

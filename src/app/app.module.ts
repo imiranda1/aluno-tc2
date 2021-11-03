@@ -1,12 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { AlunoComponent } from './aluno/aluno.component';
 import { MenuComponent } from './menu/menu.component';
 import { CadastroAlunoComponent } from './cadastro-aluno/cadastro-aluno.component';
 import { ListarAlunosComponent } from './listar-alunos/listar-alunos.component';
+import { AppRoutingModule } from './app-routing.module';
+import { EditarAlunoComponent } from './editar-aluno/editar-aluno.component';
+import { DeletarAlunoComponent } from './deletar-aluno/deletar-aluno.component';
 
 
 @NgModule({
@@ -15,11 +18,15 @@ import { ListarAlunosComponent } from './listar-alunos/listar-alunos.component';
     AlunoComponent,
     MenuComponent,
     CadastroAlunoComponent,
-    ListarAlunosComponent
+    ListarAlunosComponent,
+    EditarAlunoComponent,
+    DeletarAlunoComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

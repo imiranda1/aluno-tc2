@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Aluno } from '../aluno.model';
-import { listaAlunosCadastrados } from "../dbListaAlunos";
+import { DatabaseService } from '../database.service';
 
 @Component({
   selector: 'app-listar-alunos',
@@ -12,10 +12,14 @@ export class ListarAlunosComponent implements OnInit {
   listaDeAlunos : Aluno[];
   perfilAlunoSelecionado: Aluno
 
-  constructor() { }
+  constructor(private service : DatabaseService) { }
 
   ngOnInit(): void {
-    this.listaDeAlunos = listaAlunosCadastrados;
+    this.getAlunos()
+  }
+
+  getAlunos() : void {
+    this.listaDeAlunos = this.service.getAlunos()
   }
 
   verPerfil(aluno : Aluno) : void {

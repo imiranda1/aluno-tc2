@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AnonymousSubject } from 'rxjs/internal/Subject';
 import { Aluno } from '../aluno.model';
 import { AlunoComponent } from '../aluno/aluno.component';
+import { DatabaseService } from '../database.service';
 import { listaAlunosCadastrados } from "../dbListaAlunos";
 
 
@@ -12,33 +15,29 @@ import { listaAlunosCadastrados } from "../dbListaAlunos";
 })
 export class CadastroAlunoComponent implements OnInit {
 
-  alunoAdicionar : Aluno = {name:"",age:0,urlPicture:""};
-  constructor() { }
+  // alunoAdicionar : Aluno = {id:"",name:"",age:0,urlPicture:""};
+  formCadastroAluno: FormGroup
+  constructor(private service : DatabaseService, private router : Router) { }
 
   ngOnInit(): void {
+    this.inicializarFormulario();
   }
 
-  salvarAluno(aluno : Aluno) : void {
-    this.alunoAdicionar = aluno
-
-    if (this.validaAluno(aluno)){
-
-      if(aluno.urlPicture ===""){
-        aluno.urlPicture = "https://pbs.twimg.com/media/EnM7TmrXcAI0LKx.jpg"
-      }
-
-      listaAlunosCadastrados.push(this.alunoAdicionar);
+  private inicializarFormulario(){
+    this.formCadastroAluno = new FormGroup({
+      name: new FormControl(null),
+      age: new FormControl(null),
+      urlPicture: new FormControl(null),
+    })
+  }
+  salvarAluno() : void {
+    if (this.service.addAluno(this.formCadastroAluno.value)){
+      console.log(this.formCadastroAluno.value);
       alert("Aluno Cadastrado com Sucesso");
+      this.router.navigate(['/alunos'])
 
     }else{
       alert("Formulário Inválido");
     }
-  }
-
-  validaAluno(a : Aluno):boolean{
-    if (a.age >= 18 && a.name.length > 0 && a.name.trim()){
-      return true;
-    }
-    else false;
   }
 }

@@ -1,18 +1,32 @@
 
-
-<div class="linha">
-  <div class="coluna-50">
+<div class="columns my-5 is-centered" >
+    <div class="column is-6">
     <h1>  LISTA DE ALUNOS </h1>
-    <table>
+    <table class="table is-bordered is-hoverable is-fullwidth">
+
       <tr>
         <th>Nome</th>
         <th>Opção</th>
       </tr>
       <tr *ngFor="let aluno of listaDeAlunos" >
           <td>{{aluno.name}}</td>
-          <td (click)="verPerfil(aluno)" >
-            Ver Perfil
+          <td>
+            <a routerLink="/alunos/detalhes/{{aluno.id}}">
+              <button class="button is-primary is-rounded">Ver Perfil</button>
+            </a>
+
+            <a routerLink="/alunos/editar/{{aluno.id}}">
+              <button class="button is-link is-rounded">Editar</button>
+            </a>
+
+            <a routerLink="/alunos/excluir/{{aluno.id}}">
+              <button class="button is-danger is-rounded">Excluir</button>
+            </a>
+
+
+
           </td>
+
       </tr>
 
     </table>
